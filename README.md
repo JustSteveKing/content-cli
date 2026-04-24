@@ -10,6 +10,43 @@ Download a pre-built binary from [GitHub Releases](https://github.com/juststevek
 go install github.com/juststeveking/content-cli@latest
 ```
 
+### Nix
+
+If you use the Nix package manager, you can install `content` directly from this repository:
+
+```bash
+nix profile install github:juststeveking/content-cli
+```
+
+Or run it without installing:
+
+```bash
+nix run github:juststeveking/content-cli -- --help
+```
+
+### NixOS
+
+To include `content` in your NixOS configuration, add this repository as a flake input:
+
+```nix
+# flake.nix
+{
+  inputs.content-cli.url = "github:juststeveking/content-cli";
+
+  outputs = { self, nixpkgs, content-cli }: {
+    nixosConfigurations.my-machine = nixpkgs.lib.nixosSystem {
+      modules = [
+        ({ pkgs, ... }: {
+          environment.systemPackages = [
+            content-cli.packages.${pkgs.system}.default
+          ];
+        })
+      ];
+    };
+  };
+}
+```
+
 ## Quick start
 
 ```bash
