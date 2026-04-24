@@ -6,11 +6,11 @@ import (
 	"path/filepath"
 	"time"
 
-	"github.com/spf13/cobra"
 	"github.com/juststeveking/content-cli/internal/content"
 	"github.com/juststeveking/content-cli/internal/output"
 	"github.com/juststeveking/content-cli/internal/slug"
 	tmpl "github.com/juststeveking/content-cli/internal/template"
+	"github.com/spf13/cobra"
 )
 
 var newCollection string

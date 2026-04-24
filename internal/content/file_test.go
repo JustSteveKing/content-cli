@@ -12,12 +12,12 @@ type mockFileInfo struct {
 	modTime time.Time
 }
 
-func (m mockFileInfo) Name() string      { return "" }
-func (m mockFileInfo) Size() int64       { return 0 }
-func (m mockFileInfo) Mode() os.FileMode { return 0 }
+func (m mockFileInfo) Name() string       { return "" }
+func (m mockFileInfo) Size() int64        { return 0 }
+func (m mockFileInfo) Mode() os.FileMode  { return 0 }
 func (m mockFileInfo) ModTime() time.Time { return m.modTime }
-func (m mockFileInfo) IsDir() bool       { return false }
-func (m mockFileInfo) Sys() any          { return nil }
+func (m mockFileInfo) IsDir() bool        { return false }
+func (m mockFileInfo) Sys() any           { return nil }
 
 func TestSlug(t *testing.T) {
 	tests := []struct {

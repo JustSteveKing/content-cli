@@ -4,8 +4,8 @@ import (
 	"os"
 	"os/exec"
 
-	"github.com/spf13/cobra"
 	"github.com/juststeveking/content-cli/internal/content"
+	"github.com/spf13/cobra"
 )
 
 var editCmd = &cobra.Command{

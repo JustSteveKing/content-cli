@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/spf13/cobra"
 	"github.com/juststeveking/content-cli/internal/output"
 	"github.com/juststeveking/content-cli/internal/schema"
+	"github.com/spf13/cobra"
 	"gopkg.in/yaml.v3"
 )
 

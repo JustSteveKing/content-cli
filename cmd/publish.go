@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/spf13/cobra"
 	"github.com/juststeveking/content-cli/internal/content"
 	"github.com/juststeveking/content-cli/internal/output"
+	"github.com/spf13/cobra"
 )
 
 var publishCmd = &cobra.Command{

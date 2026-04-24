@@ -6,9 +6,9 @@ import (
 	"os"
 	"strings"
 
-	"github.com/spf13/cobra"
 	"github.com/juststeveking/content-cli/internal/config"
 	"github.com/juststeveking/content-cli/internal/output"
+	"github.com/spf13/cobra"
 )
 
 var initCmd = &cobra.Command{

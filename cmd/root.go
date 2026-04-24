@@ -6,8 +6,8 @@ import (
 	"os"
 
 	"github.com/charmbracelet/fang"
-	"github.com/spf13/cobra"
 	"github.com/juststeveking/content-cli/internal/config"
+	"github.com/spf13/cobra"
 )
 
 var Version = "dev"
