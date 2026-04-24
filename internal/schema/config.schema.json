@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "content CLI config",
+  "description": "Schema for .content.yaml",
+  "type": "object",
+  "required": ["collections"],
+  "additionalProperties": false,
+  "properties": {
+    "default_collection": {
+      "type": "string",
+      "description": "Collection used when --collection is not specified for commands that require one"
+    },
+    "collections": {
+      "type": "object",
+      "minProperties": 1,
+      "description": "Map of named content collections",
+      "additionalProperties": { "$ref": "#/$defs/collection" }
+    }
+  },
+  "$defs": {
+    "collection": {
+      "type": "object",
+      "required": ["dir", "format"],
+      "additionalProperties": false,
+      "properties": {
+        "dir": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Directory where this collection's files are stored"
+        },
+        "format": {
+          "type": "string",
+          "enum": ["md", "mdx"],
+          "description": "File format for new content in this collection"
+        },
+        "template": {
+          "type": "string",
+          "description": "Path to a template file used when scaffolding new content"
+        },
+        "required_fields": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 },
+          "description": "Frontmatter fields required in every file in this collection"
+        },
+        "optional_fields": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 },
+          "description": "Frontmatter fields that are optional"
+        },
+        "slug": {
+          "type": "string",
+          "enum": ["kebab", "snake", "raw"],
+          "description": "Slug generation style for new file names"
+        },
+        "defaults": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "author": { "type": "string" },
+            "draft": { "type": "boolean" }
+          }
+        }
+      }
+    }
+  }
+}

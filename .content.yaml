@@ -1,0 +1,16 @@
+default_collection: blog
+collections:
+  blog:
+    dir: src/content/blog
+    format: mdx
+    required_fields:
+      - title
+      - date
+      - draft
+    optional_fields:
+      - description
+      - tags
+    slug: kebab
+    defaults:
+      author: ""
+      draft: true
